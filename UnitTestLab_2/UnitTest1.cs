@@ -8,67 +8,48 @@ namespace UnitTestLab_2
     public class UnitTest1
     {
         [TestMethod]
-        public void TestSloz()
+        public void TestAddit()
         {
-            var vector = new Vector();
-            int[] vec1 = new int[] { 2, 5 };
-            int[] vec2 = new int[] { 3, 0 };
-            int[] result = vector.Sloz(vec1, vec2);
-            int[] expected = new int[] { 5, 5 };
-
-            Assert.AreEqual(expected[0], result[0]);
-            Assert.AreEqual(expected[1], result[1]);
+            var vector1 = new Vector(3, 5, 0);
+            var vector2 = new Vector(2, 0, 0);
+            var result = vector1 + vector2;
+            var expected = new Vector(5, 5, 0);
+        }
+        [TestMethod]
+        public void TestSubstract()
+        {
+            var vector1 = new Vector(3, 5, 1);
+            var vector2 = new Vector(2, 0, 1);
+            var result = vector1 - vector2;
+            var expected = new Vector(1, 5, 0);
         }
 
         [TestMethod]
-        public void TestSkalar()
+        public void TestMultiConst()
         {
-            var vector = new Vector();
-            int[] vec1 = new int[] { 2, 5 };
-            int[] vec2 = new int[] { 3, 7 };
-            var result = vector.Skalar(vec1, vec2);
-            var expected = 41;
-
-            Assert.AreEqual(expected, result);
+            var vector1 = new Vector(3, 5, 1);
+            int b = 4;
+            var result = vector1 * b;
+            var expected = new Vector(12, 20, 4);
         }
 
         [TestMethod]
-        public void TestOtnim()
+        public void TestModuleMultipl()
         {
-            var vector = new Vector();
-            int[] vec1 = new int[] { 2, 5 };
-            int[] vec2 = new int[] { 3, 0 };
-            var result = vector.Otnim(vec1, vec2);
-            var expected = new int[] { -1, 5 };
-
-            Assert.AreEqual(expected[0], result[0]);
-            Assert.AreEqual(expected[1], result[1]);
+            var vector1 = new Vector(3, 5, 0);
+            var vector2 = new Vector(2, 0, 0);
+            var result = vector1.ModuleMultipl(vector1, vector2);
+            var expected = 6;
         }
 
         [TestMethod]
-        public void TestUmnoz()
+        public void TestVectorMultipl()
         {
-            var vector = new Vector();
-            int[] vec1 = new int[] { 2, 5 };
-            var result = vector.Umnoz(vec1, 3);
-            var expected = new int[] { 6, 15 };
-
-            Assert.AreEqual(expected[0], result[0]);
-            Assert.AreEqual(expected[1], result[1]);
-        }
-
-        [TestMethod]
-        public void TestVectornoe()
-        {
-            var vector = new Vector();
-            int[] vec1 = new int[] { 2, 5, 4 };
-            int[] vec2 = new int[] { 3, 0, 7 };
-            var result = vector.Vectorne(vec1, vec2);
-            var expected = new int[] { 35, -2, -15 };
-
-            Assert.AreEqual(expected[0], result[0]);
-            Assert.AreEqual(expected[1], result[1]);
-            Assert.AreEqual(expected[2], result[2]);
+            var vector1 = new Vector(2, 5, 4);
+            var vector2 = new Vector(3, 0, 7);
+            var result = vector1 / vector2;
+            var expected = new Vector(35, -2, -15);
         }
     }
+
 }
