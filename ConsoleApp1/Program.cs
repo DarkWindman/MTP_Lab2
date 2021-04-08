@@ -10,6 +10,10 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            var vector1 = new Vector(3, 5, 0);
+            var vector2 = new Vector(2, 0, 0);
+            var result = vector1 + vector2;
+            Console.WriteLine(result);
             Console.ReadKey();
         }
 

@@ -13,6 +13,8 @@ namespace ConsoleApp1
         }
         public static Vector operator +(Vector a, Vector b)
         {
+            Console.WriteLine();
+            Console.WriteLine(b.x);
             return new Vector(a.x + b.x, a.y + b.y, a.z+b.z);
         }
 
